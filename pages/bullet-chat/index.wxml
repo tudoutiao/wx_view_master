@@ -1,0 +1,6 @@
+<!--pages/bullet-chat/index.wxml-->
+<text>pages/bullet-chat/index.wxml</text>
+
+<view class="z-bullet">
+    <bullet-view line="{{3}}" bulletList="{{originList}}" bindclick="bindTapBullet" animateStatus="{{true}}"></bullet-view>
+</view>

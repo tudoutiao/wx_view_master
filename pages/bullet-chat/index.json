@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "bullet-view":"../../components/bulllet-chat/bullet-chat"
+    }
+}

@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="main">
+  <view class="titile">组件展示</view>
+  <view class="list">
+    <view class="list-view" bindtap="bindNav" wx:for="{{list}}" wx:key="index" data-type="{{item.type}}">
+      {{item.name}}
+      <view class="list-icon">
+        {{item.icon}}
+      </view>
+    </view>
+  </view>
+</view>

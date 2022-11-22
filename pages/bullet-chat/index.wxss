@@ -1,0 +1,199 @@
+.z-bullet {
+    width: 690rpx;
+    height: 248rpx;
+    /* background: #f8faff; */
+    background-color: saddlebrown;
+    /* 蓝色/标签底色、浅蓝色按钮、蓝色卡片描边 */
+  
+    border: 1rpx solid #ecf1ff;
+    border-radius: 12rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    padding: 28rpx 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .z-bullet-list {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: rowScroll 8s linear infinite;
+    height: 48rpx;
+  }
+  
+  @keyframes rowScroll {
+    0% {
+      /* 为0时，ios会闪动 */
+      transform: translateX(1);
+    }
+  
+    100% {
+      transform: translateX(var(--marqueeWidth--));
+    }
+  }
+  
+  .z-bullet-single {
+    max-width: 438rpx;
+    padding: 2rpx 20rpx 2rpx 2rpx;
+    box-sizing: border-box;
+    height: 48rpx;
+    display: flex;
+    align-items: center;
+    background: #ecf1ff;
+    background-color: rebeccapurple;
+    border-radius: 35rpx;
+    margin-right: 28rpx;
+  }
+  
+  .z-bullet-single-img {
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    background-color: salmon;
+    margin-right: 12rpx;
+  }
+  
+  .z-bullet-single-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #303030;
+    color: #fff;
+  }
+  
+  .z-bullet-list-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .z-bullet-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .title {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    color: salmon;
+  }
+  
+  .y-bullet {
+    width: 320rpx;
+    height: 340rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    background: #ffffff;
+    /* background: saddlebrown; */
+    border: 1rpx solid #edf0f9;
+    box-shadow: 0px 3rpx 10rpx rgba(16, 50, 145, 0.04);
+    border-radius: 8rpx;
+    padding-left: 16rpx;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .y-bullet-list {
+    display: flex;
+    flex-direction: column;
+    /* animation: colScroll 8s linear infinite; */
+    padding-top: 20rpx;
+    box-sizing: border-box;
+  }
+  
+  @keyframes colScroll {
+    0% {
+      /* 为0时，ios会闪动 */
+      transform: translateY(1);
+    }
+  
+    100% {
+      transform: translateY(-216px);
+    }
+  }
+  
+  .y-bullet-list--container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .y-bullet-single {
+    width: 100%;
+    height: 70rpx;
+    margin-bottom: 28rpx;
+    display: flex;
+    align-items: center;
+  }
+  
+  .y-bullet-single-avatar {
+    width: 60rpx;
+    height: 60rpx;
+    background-color: seagreen;
+    border-radius: 50%;
+    margin-right: 12rpx;
+  }
+  
+  .y-bullet-single-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .y-bullet-single-info__job {
+    color: #262d3d;
+    font-size: 24rpx;
+    line-height: 36rpx;
+  }
+  .y-bullet-single-info__desc {
+    font-size: 22rpx;
+    line-height: 32rpx;
+    color: #a1a3b3;
+  }
+  
+  .z-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .z-single {
+    padding: 10rpx 20rpx;
+    color: white;
+    background-color: cadetblue;
+    margin-right: 22rpx;
+  }
+  
+  .z-list {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: rowScrollTest 2s linear infinite;
+  }
+  
+  @keyframes rowScrollTest {
+    0% {
+      /* 为0时，ios会闪动 */
+      transform: translateX(1);
+    }
+  
+    100% {
+      transform: translateX(var(--domWidth--));
+    }
+  }
+  
+  .z-bullet-test {
+    width: 690rpx;
+    height: 88rpx;
+    display: flex;
+    align-items: center;
+    background-color: saddlebrown;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    overflow: hidden;
+  }
+  
