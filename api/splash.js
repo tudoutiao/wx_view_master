@@ -48,7 +48,7 @@ const getSplashList = (page = 1) => {
 }
 
 const refreshPageInfo = (localPageIndex = 1) => {
-    let list = customData.all_splashs.splice(0, localPageIndex * customData.size)
+    let list = customData.all_splashs.slice(0, localPageIndex * customData.size)
     customData.splashs = list
 }
 
