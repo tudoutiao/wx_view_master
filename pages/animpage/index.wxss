@@ -1,0 +1,173 @@
+/* pages/animpage/index.wxss */
+
+.breath_light {
+    width: 400px;
+    /* 宽度 */
+    height: 30px;
+    /* 高度 */
+    opacity: 1;
+    /* 不透明度 */
+    overflow: hidden;
+    /* 溢出隐藏 */
+    /* 背景色 */
+    margin: 10% auto;
+    /* 外边距 */
+    border-radius: 2px;
+    /*圆角*/
+
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    animation-name: glow;
+    /* 动画名称 */
+    animation-duration: 15s;
+    /* 动画时长3秒 */
+    animation-timing-function: ease-in-out;
+    /* 动画速度曲线：以低速开始和结束*/
+    animation-iteration-count: infinite;
+    /* 播放次数：无限 */
+    animation-direction: alternate;
+}
+
+@keyframes glow {
+    0% {
+        background-color: rgba(148, 106, 106, 0.2);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    25% {
+        background-color: rgba(100, 129, 97, 0.2);
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    75% {
+        background-color: rgba(100, 111, 145, 0.2);
+        box-shadow: 0 0 10px rgba(0, 81, 255, 0.5);
+    }
+
+    100% {
+        background-color: rgba(131, 103, 131, 0.233);
+        box-shadow: 0 0 10px rgba(237, 102, 255, 0.5);
+    }
+}
+
+@keyframes breathe {
+    0% {
+        opacity: .2;
+        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        opacity: 1;
+        border: 1px solid rgba(59, 235, 235, 1);
+        box-shadow: 0 1px 30px rgba(59, 255, 255, 1);
+    }
+}
+
+@keyframes myfirst {
+    0% {
+        background: red;
+    }
+
+    25% {
+        background: yellow;
+    }
+
+    50% {
+        background: blue;
+    }
+
+    100% {
+        background: green;
+    }
+}
+
+@keyframes breath {
+    from {
+        opacity: 0.1;
+    }
+
+    /* 动画开始时的不透明度 */
+    50% {
+        opacity: 1;
+    }
+
+    /* 动画50% 时的不透明度 */
+    to {
+        opacity: 0.1;
+    }
+
+    /* 动画结束时的不透明度 */
+}
+
+.bg_img_view {
+    width: 400px;
+    height: 300px;
+}
+
+.bg_img_anim {
+    opacity: 1;
+    /* 不透明度 */
+    overflow: hidden;
+    /* 溢出隐藏 */
+    /* 背景色 */
+    margin: 10% auto;
+    /* 外边距 */
+    border-radius: 2px;
+    /*圆角*/
+
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    animation-name: glow;
+    /* 动画名称 */
+    animation-duration: 5s;
+    /* 动画时长3秒 */
+    animation-timing-function: ease-in-out;
+    /* 动画速度曲线：以低速开始和结束*/
+    animation-iteration-count: infinite;
+    /* 播放次数：无限 */
+    animation-direction: alternate;
+}
+
+.bg_img_anim_view {
+    width: 400px;
+    /* 宽度 */
+    height: 300px;
+    /* 高度 */
+    opacity: 1;
+    /* 不透明度 */
+    overflow: hidden;
+    /* 溢出隐藏 */
+    /* 背景色 */
+    margin: 10% auto;
+    /* 外边距 */
+    border-radius: 2px;
+    /*圆角*/
+
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    /* animation-name: img_bg_anim; */
+    /* 动画名称 */
+    animation-duration: 5s;
+    /* 动画时长3秒 */
+    animation-timing-function: ease-in-out;
+    /* 动画速度曲线：以低速开始和结束*/
+    animation-iteration-count: infinite;
+    /* 播放次数：无限 */
+    animation-direction: alternate;
+    background-image: url("http://www.lucky510.com/assets/logos/ic_logo.png");
+}
+
+@keyframes img_bg_anim {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    25% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    75% {
+        box-shadow: 0 0 10px rgba(0, 81, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(237, 102, 255, 0.5);
+    }
+}

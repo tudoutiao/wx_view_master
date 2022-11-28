@@ -1,0 +1,15 @@
+<!--pages/scroll-load/index.wxml 滑动加载数据-->
+<text>滑动加载</text>
+<scroll-view id="list" scroll-y="true" style="height:{{winHeight-30}}px" bindscrolltolower='bindscrolltolower'>
+    <view>
+        <block wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:key="index">
+                <!-- 设置高度为了显示滚动条 可以滑动 -->
+                <view style="height:50px">
+                    <text>{{item.desc}}</text>
+                </view>
+            </block>
+        </block>
+    </view>
+
+</scroll-view>

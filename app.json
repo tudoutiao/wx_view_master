@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/bullet-chat/index"
+        "pages/bullet-chat/index",
+        "pages/animpage/index",
+        "pages/scroll-load/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

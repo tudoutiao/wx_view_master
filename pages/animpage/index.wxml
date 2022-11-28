@@ -1,0 +1,12 @@
+<!--pages/animpage/index.wxml-->
+<text>pages/animpage/index.wxml</text>
+<view class="breath_light">呼吸线</view>
+
+
+<view class="bg_img_view" style="margin-top: 50rpx; background-image:url('http://www.lucky510.com/assets/logos/ic_logo.png'),linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); background-size: 80px;"></view>
+<view class="bg_img_anim" style="margin: 10px;" >
+    <view class="bg_img_anim_view" style="margin-top: 50rpx;background-size: 90px; "></view>
+</view>
+<view style="margin: 10px;" >
+    <view class="bg_img_anim_view" style=" background-image: url('../../images/ic_launcher_foreground4.png'); margin-top: 50rpx;background-size: 90px; "></view>
+</view>
