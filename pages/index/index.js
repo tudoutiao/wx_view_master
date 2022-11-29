@@ -2,6 +2,7 @@ import {
     getBackgroundAudioManager,
     Throttler
 } from "../../utils/util.js";
+const util = require('../../utils/util')
 Page({
     data: {
         list: [
@@ -45,11 +46,11 @@ Page({
                 icon: "🚎",
                 type: "scroll_load",
             },
-            //   {
-            //     name: "echarts地图",
-            //     icon: "🚜",
-            //     type: "chart",
-            //   },
+            {
+                name: "图片编辑",
+                icon: "🚜",
+                type: "canvas_drag",
+            },
             //   {
             //     name: "textarea与input的坑",
             //     icon: "🚑",
@@ -65,6 +66,19 @@ Page({
         } = e.currentTarget.dataset;
         let url = "";
         switch (type) {
+            case "canvas_drag": {
+                let data = {
+                    id: 2571,
+                    title: "世界杯开幕",
+                    dayImgUrl: "https://img3.chouti.com/CHOUTI_20221120/E21D2073E98F4366A280AD50DEDE3460_W1080H1920.jpg",
+                    dayWidthHeight: "1080*1920",
+                }
+                data = util.dealListData(data)
+                console.log(data)
+                url = data.jumpUrl
+                break;
+            }
+
             case "radio":
                 url = "/pages/radio-checkbox/index";
                 break;
@@ -91,8 +105,10 @@ Page({
                 break;
             case "animation":
                 url = "/pages/animpage/index";
+                break;
             case "scroll_load":
                 url = "/pages/scroll-load/index";
+                break;
             default:
                 break;
         }

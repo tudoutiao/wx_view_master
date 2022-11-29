@@ -1,0 +1,24 @@
+<!--components/dialog-input/dialog-input.wxml-->
+<!-- 确认框 -->
+<!-- 遮罩层 -->
+
+<cover-view class="dialog-overlay-view" style="width: {{ windowWidth }}px; height: {{ windowHeight }}px; display: {{ show ? 'block' : 'none' }};"></cover-view>
+
+<cover-view class="col-center" style="width: {{ windowWidth }}px; height: {{ windowHeight }}px; display: {{ show ? 'flex' : 'none' }};">
+    <view>
+        <view class="dialog-content-view">
+            <view>
+                <text class="dialog-content-text">{{ message }}</text>
+            </view>
+
+            <view class="operation-view">
+                <view class="operation-col-view" bindtouchend="onCancel">
+                    <text class="cancel-text">{{ cancelButtonText }}</text>
+                </view>
+                <view class="operation-col-view" bindtouchend="onConfirm">
+                    <text class="confirm-text">{{ confirmButtonText }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</cover-view>

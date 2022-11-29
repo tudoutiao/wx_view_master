@@ -59,7 +59,40 @@ export class Throttler {
         callback();
     }
 }
+/** 根据地址修改跳转信息 */
+const dealListData = (v) => {
+    if (v.dayImgUrl) {
+        v.jumpUrl = '/pages/canvaspage/index?url=' + v.dayImgUrl + '&title=' + encodeURIComponent(v.desc) + '&id=' + v.id;
+    }
+    return v;
+}
+
+const resizeHeight = (img) => {
+    var width = img.width
+    var height = img.height
+    const windowInfo = wx.getWindowInfo()
+    var screenWidth = windowInfo.windowWidth
+    var screenHeight = windowInfo.windowHeight
+
+    // console.log(windowInfo.pixelRatio)
+    // console.log(windowInfo.screenWidth)
+    // console.log(windowInfo.screenHeight)
+    // console.log(windowInfo.windowWidth)
+    // console.log(windowInfo.windowHeight)
+    // console.log(windowInfo.statusBarHeight)
+    // console.log(windowInfo.safeArea)
+    // console.log(windowInfo.screenTop)
+    //rpx
+    let widthRpx = 650
+    let heightRpx = widthRpx * height / width
+    return {
+        width: widthRpx,
+        height: heightRpx
+    }
+}
 
 module.exports = {
     systemSize: systemSize,
+    dealListData:dealListData,
+    resizeHeight:resizeHeight
 }

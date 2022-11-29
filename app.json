@@ -4,7 +4,8 @@
         "pages/logs/logs",
         "pages/bullet-chat/index",
         "pages/animpage/index",
-        "pages/scroll-load/index"
+        "pages/scroll-load/index",
+        "pages/canvaspage/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
