@@ -2,9 +2,9 @@
 <!-- 确认框 -->
 <!-- 遮罩层 -->
 
-<cover-view class="dialog-overlay-view" style="width: {{ windowWidth }}px; height: {{ windowHeight }}px; display: {{ show ? 'block' : 'none' }};"></cover-view>
+<view class="dialog-overlay-view" style="width: {{ windowWidth }}px; height: {{ windowHeight }}px; display: {{ show ? 'block' : 'none' }};"></view>
 
-<cover-view class="col-center" style="width: {{ windowWidth }}px; height: {{ windowHeight }}px; display: {{ show ? 'flex' : 'none' }};">
+<view class="col-center" style="width: {{ windowWidth }}px; height: {{ windowHeight }}px; display: {{ show ? 'flex' : 'none' }};">
     <view>
         <view class="dialog-content-view">
             <view>
@@ -21,4 +21,4 @@
             </view>
         </view>
     </view>
-</cover-view>
+</view>

@@ -3,7 +3,8 @@ import {
     getInstance
 } from '../../components/canvas-drag/view-canvas-drag'
 import utils from '../../utils/util';
-import dialog from '../../components/dialog-input/view-dialog-input'
+import Dialog from '../../components/dialog-input/view-dialog-input';
+import PopWindowView from '../../components/popwindow/view-pop-window'
 Page({
 
     /**
@@ -42,13 +43,8 @@ Page({
                 src: "/images/svg/icon_share.svg",
                 type: "download"
             },
-            //   {
-            //     title: "分享",
-            //     src: "/images/svg/icon_share.svg",
-            //     type: "share"
-            //   },
         ],
-        isShow:false,
+        isShow: false,
         states: {
             isShowAddText: false,
             isExprot: "none",
@@ -66,7 +62,7 @@ Page({
     onLoad: function (options) {
         console.log("====onLoad====")
         console.log(options)
-        var self = this;
+        let self = this;
         self.data.draggableCanvas = getInstance('#canvasview');
         self.data.downloadCanvas = getInstance('#canvasexport');
 
@@ -86,7 +82,19 @@ Page({
             }
         })
 
-        // console.log("canvaspage  onLoad  ", this.data.splash);
+        PopWindowView.confirm({
+            selector: '#pop-window',
+            confirmCallback: function () {
+                self.setData({
+                    isShow: !self.data.isShow
+                })
+            },
+            cancelCallback:function(){
+                self.setData({
+                    isShow: !self.data.isShow
+                })
+            }
+        })
     },
 
     /**
@@ -94,9 +102,6 @@ Page({
      */
     onReady: function () {
         console.log("====onReady====")
-        // console.log("canvaspage  onReady  ", this.data.splash);
-        // this.canvasView=this.selectComponent("#canvas-drag");
-        // this.canvasView.refreshView();
     },
 
     /**
@@ -104,17 +109,6 @@ Page({
      */
     onShow: function () {
         console.log("====onShow====")
-        let slef = this
-        // let w = slef.data.width / 2
-        // let h = slef.data.height / 2
-        // if (slef.data.width > 0) {
-        //   slef.setData({
-        //     width: w,
-        //     height: h,
-        //   })
-        //  slef.data.draggableCanvas.draw()
-        // }
-
     },
 
     /**
@@ -153,12 +147,16 @@ Page({
     },
 
     addImg: function (item) {
-        var self = this;
-        wx.chooseImage({
+        let self = this;
+        wx.chooseMedia({
+            mediaType: ['image'],
+            sourceType: ['album'],
             success: (res) => {
+                console.log(res)
                 wx.getImageInfo({
-                    src: res.tempFilePaths[0],
+                    src: res.tempFiles[0].tempFilePath,
                     success: (img) => {
+                        console.log(" getImageInfo success")
                         self.setData({
                             graph: {
                                 w: self.data.width * 0.3,
@@ -166,21 +164,32 @@ Page({
                                 x: self.data.width * 0.4,
                                 y: img.height * self.data.width * 0.4 / img.width,
                                 type: 'image',
-                                url: res.tempFilePaths[0],
+                                url: res.tempFiles[0].tempFilePath,
                             }
                         })
+                    },
+                    fail: (res) => {
+                        console.log(res)
                     }
                 })
+
+            },
+            fail: (res) => {
+                console.log(res)
             }
         })
     },
 
     addText: function () {
-        let it=this
-        it.setData({
-            isShow:!it.data.isShow
+        this.setData({
+            isShow: !this.data.isShow
         })
-        console.log(it.data.isShow)
+
+    },
+    onHideBox() {
+        this.setData({
+            isShow: !this.data.isShow
+        });
     },
 
     //添加文字+文字颜色
@@ -296,6 +305,6 @@ Page({
         this.setData({
             rgb
         })
-    }
+    },
 
 })

@@ -15,10 +15,7 @@
 
 const defaultOptions = {
     show: false,
-    message: '',
-    selector: '#cus-dialog',
-    confirmButtonText: '确认',
-    cancelButtonText: '取消',
+    selector: '#pop-window',
     confirmCallback: null,
     cancelCallback: null,
 };
@@ -30,16 +27,22 @@ function getContext() {
     return pages[pages.length - 1];
 }
 
-const Dialog = (options) => {
+const PopWindowView = (options) => {
     options = Object.assign({}, currentOptions, options);
-    const context = options.context || getContext();
-    const dialog = context.selectComponent(options.selector);
+
+
+    const pages = getCurrentPages();
+    const ctx = pages[pages.length - 1];
+    const pop= ctx.selectComponent(options.selector);
+
+    // const context = options.context || getContext();
+    // const pop = context.selectComponent(options.selector);
     delete options.context;
     delete options.selector;
-    if (dialog) {
-        dialog.setData(options);
+    if (pop) {
+        pop.setData(options);
         wx.nextTick(() => {
-            dialog.setData({ show: false });
+            pop.setData({ show: false });
         });
     }
     else {
@@ -47,5 +50,5 @@ const Dialog = (options) => {
     }
 };
 
-Dialog.confirm = (options) => Dialog(Object.assign({ showCancelButton: true }, options));
-export default Dialog;
+PopWindowView.confirm = (options) => PopWindowView(Object.assign(options));
+export default PopWindowView;

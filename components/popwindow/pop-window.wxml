@@ -1,0 +1,6 @@
+<!--components/popwindow/pop-window.wxml-->
+<view style=" display: {{ show ? 'block' : 'none' }};">
+    <view class="pop-window-mask" bindtap="onCancel"></view>
+    <view class="pop-window-view">
+    </view>
+</view>

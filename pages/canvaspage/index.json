@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "canvas-drag":"/components/canvas-drag/canvas-drag",
-        "dialog-input":"/components/dialog-input/dialog-input"
+        "dialog-input":"/components/dialog-input/dialog-input",
+        "popup-window":"/components/popwindow/pop-window"
     }
 }
