@@ -1,41 +1,70 @@
 /* components/popwindow/pop-window.wxss */
-.pop-window-mask{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    animation: alphin 0.5s ;
+.pop-window-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: alphin 0.5s;
 }
 
 .pop-window-view {
-    position: absolute;
-    width: 100%;
-    height: 180px;
-    background: #42b983;
-    border-radius: 8px 8px 0 0;
-    position: absolute;
-    bottom: 0px;
-    animation-duration: 0.5s;
-    animation-name: slidein;
-   }
-    
-   @keyframes slidein {
-    from {
+  position: absolute;
+  width: 100%;
+  height: 750rpx;
+  background: #42b983;
+  border-radius: 8px 8px 0 0;
+  position: absolute;
+  bottom: 0px;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
     transform: translateY(70%);
-    }
-    to {
+  }
+
+  to {
     transform: translateY(0);
-    }
-   }
+  }
+}
 
-   @keyframes alphin{
-       from {
-           background:rgba(0, 0, 0, 0)
-       }
+@keyframes alphin {
+  from {
+    background: rgba(0, 0, 0, 0)
+  }
 
-       to {
-           background: rgba(0, 0, 0, 0.5);
-       }
-   }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.top-nav-container{
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 14px;
+    background-color: #CCC;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .top-nav-container .tab-item{
+    display: inline-block;
+    margin: 0rpx 30rpx;
+  }
+  
+  .top-nav-container .tab-item.active{
+    color: rgb(48, 121, 255);
+    border-bottom: 4rpx solid #F00;
+    line-height: 52rpx;
+  }
+  
+  .swiper-container{
+    height: calc(100vh - 60rpx);
+    background-color: #00b26a;
+    font-size: 14px;
+  }
+ 

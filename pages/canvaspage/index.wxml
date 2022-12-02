@@ -1,12 +1,11 @@
 <!--pages/canvaspage/index.wxml-->
 <!-- <dialog-input id="dialog-view" show="{{isShow}}"></dialog-input> -->
 <!-- 画布 -->
-<view style="display: flex; justify-content: center;">
-    <canvas-drag id="canvasview" graph="{{graph}}" width="{{width}}" height="{{height}}" enableUndo="{{true}}" style="display: {{isShow?'none':'flex'}};"></canvas-drag>
-    <image id="canvas-img" hidden="{{!isShow}}" src="{{original}}" style="width: {{width}}rpx; height: {{height}}rpx;"></image>
+<view style="display: flex; position: relative; height: {{height}}rpx;">
+    <canvas-drag id="canvasview" graph="{{graph}}" width="{{width}}" height="{{height}}" enableUndo="{{true}}" style="display: {{isShow?'none':'flex'}}; position: absolute; left: {{(750-width)/2}}rpx;"></canvas-drag>
+    <image id="canvas-img" src="{{original}}" style="position: absolute;width: {{width}}rpx; height: {{height}}rpx; left: {{(750-width)/2}}rpx;"></image>
 
 </view>
-
 
 <!--操作选择-->
 <view style="display: flex; justify-content: space-between; height: 200rpx; ">
