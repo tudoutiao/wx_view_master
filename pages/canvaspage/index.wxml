@@ -20,8 +20,9 @@
 
 </view>
 
+
 <!--弹框-->
-<popup-window id="pop-window" show="{{isShow}}"></popup-window>
+<popup-window id="pop-window" show="{{isShow}}" wx:if="{{isShow}}"></popup-window>
 <view style="width: 0; height: 0;  margin-top: 1000rpx;  overflow: hidden; background-color: hotpink;">
     <canvas-drag id="canvasexport" width="{{width * downloadScale}}" height="{{height * downloadScale}}" enableUndo="{{true}}"></canvas-drag>
 </view>

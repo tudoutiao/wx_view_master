@@ -9,19 +9,32 @@
         </view>
 
         <!--tab-->
-        <view>
-            <scroll-view scroll-x="{{true}}" class='top-nav-container' scroll-left="{{scrollLeft}}">
-                <block wx:for="{{tabs}}" wx:key="title">
-                    <view class='tab-item {{currentActiveNavIndex == index ? "active":""}}' data-current-index='{{index}}' bindtap='topNavChange'>
-                        {{item.title}}
-                    </view>
-                </block>
-            </scroll-view>
+        <view style="margin-top: 10px;">
+            <view style="display: flex; align-items: center;justify-content: center;width: 100%;background:  ;">
+                <scroll-view scroll-x="{{true}}" class='top-nav-container' scroll-left="{{scrollLeft}}">
+                    <block wx:for="{{tabs}}" wx:key="title">
+                        <view class='tab-item {{currentActiveNavIndex == index ? "active":""}}' data-current-index='{{index}}' bindtap='topNavChange'>
+                            {{item.title}}
+                        </view>
+                    </block>
+                </scroll-view>
+            </view>
+
+
             <swiper bindchange="swiperChange" class='swiper-container' current='{{currentActiveNavIndex}}' bindtouchmove="touchmove">
                 <block wx:for="{{tabs}}" wx:key="title">
                     <swiper-item style="overflow:scroll">
-                    <image src="{{item.img}}"></image>
-                        <view>{{item.desc}}</view>
+                        <view wx:if="{{item.position==0}}">
+                            <view class="z-bullet">
+                                <bullet-view line="{{3}}" bulletList="{{originList}}" bindclick="bindTapBullet" animateStatus="{{true}}"></bullet-view>
+                            </view>
+                        </view>
+                        <view wx:if="{{item.position==1}}">
+                            <view class="z-bullet-list">
+                                <view>34234</view>
+                            </view>
+                        </view>
+
                     </swiper-item>
                 </block>
             </swiper>

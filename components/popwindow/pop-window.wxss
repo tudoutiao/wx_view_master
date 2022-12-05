@@ -1,70 +1,109 @@
 /* components/popwindow/pop-window.wxss */
 .pop-window-mask {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  animation: alphin 0.5s;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    animation: alphin 0.5s;
 }
 
 .pop-window-view {
-  position: absolute;
-  width: 100%;
-  height: 750rpx;
-  background: #42b983;
-  border-radius: 8px 8px 0 0;
-  position: absolute;
-  bottom: 0px;
-  animation-duration: 0.5s;
-  animation-name: slidein;
+    position: absolute;
+    width: 100%;
+    height: 750rpx;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    bottom: 0px;
+    animation-duration: 0.5s;
+    animation-name: slidein;
 }
 
 @keyframes slidein {
-  from {
-    transform: translateY(70%);
-  }
+    from {
+        transform: translateY(70%);
+    }
 
-  to {
-    transform: translateY(0);
-  }
+    to {
+        transform: translateY(0);
+    }
 }
 
 @keyframes alphin {
-  from {
-    background: rgba(0, 0, 0, 0)
-  }
+    from {
+        background: rgba(0, 0, 0, 0)
+    }
 
-  to {
-    background: rgba(0, 0, 0, 0.5);
-  }
+    to {
+        background: rgba(0, 0, 0, 0.5);
+    }
 }
 
-.top-nav-container{
-    width: 100%;
+.top-nav-container {
+    width: 400rpx;
     height: 60rpx;
     line-height: 60rpx;
     font-size: 14px;
-    background-color: #CCC;
     vertical-align: middle;
     white-space: nowrap;
-  }
-  
-  .top-nav-container .tab-item{
+}
+
+.top-nav-container .tab-item {
     display: inline-block;
-    margin: 0rpx 30rpx;
-  }
-  
-  .top-nav-container .tab-item.active{
-    color: rgb(48, 121, 255);
+}
+.tab-item{
+    text-align: center;
+    width: 200rpx;
+    font-size: 14px;
+    color: rgb(173, 172, 172);
+}
+
+.top-nav-container .tab-item.active {
+    color: rgb(7, 7, 7);
     border-bottom: 4rpx solid #F00;
     line-height: 52rpx;
+    font-size: 16px;
+    width: 200rpx;
+}
+
+.swiper-container {
+    height: calc(100vh - 60rpx);
+    background-color: white;
+    font-size: 14px;
+}
+
+.z-bullet {
+    width: 690rpx;
+    height: 248rpx;
+    /* background: #f8faff; */
+    background-color: saddlebrown;
+    /* 蓝色/标签底色、浅蓝色按钮、蓝色卡片描边 */
+  
+    border: 1rpx solid #ecf1ff;
+    border-radius: 12rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    padding: 28rpx 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   
-  .swiper-container{
-    height: calc(100vh - 60rpx);
-    background-color: #00b26a;
-    font-size: 14px;
+  .z-bullet-list {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: rowScroll 8s linear infinite;
+    height: 48rpx;
   }
- 
+  
+  @keyframes rowScroll {
+    0% {
+      /* 为0时，ios会闪动 */
+      transform: translateX(1);
+    }
+  
+    100% {
+      transform: translateX(var(--marqueeWidth--));
+    }
+  }
