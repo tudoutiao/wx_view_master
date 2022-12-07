@@ -51,6 +51,11 @@ Page({
                 icon: "🚜",
                 type: "canvas_drag",
             },
+            {
+                name: "加载动画",
+                icon: "🚜",
+                type: "loading-anim",
+            },
             //   {
             //     name: "textarea与input的坑",
             //     icon: "🚑",
@@ -76,6 +81,10 @@ Page({
                 data = util.dealListData(data)
                 console.log(data)
                 url = data.jumpUrl
+                break;
+            }
+            case "loading-anim":{
+                url="/pages/loading/index"
                 break;
             }
 

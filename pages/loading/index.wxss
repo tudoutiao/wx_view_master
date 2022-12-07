@@ -1,0 +1,613 @@
+/* pages/loading/index.wxss */
+
+page {
+    background: #fff;
+    padding-bottom: 100px;
+    /* background: #000;
+    background: radial-gradient(#222, #000); */
+  }
+  .title{
+    margin: 20rpx ;
+    font-size: 25rpx;
+    text-align: center;
+    font-weight: bold;
+  }
+  .box{
+    /* width: 100px; */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: unset;
+  }
+  /* 第一个 */
+  .ring {
+    position: relative;
+    margin: 40rpx auto;
+    width: 80px; 
+    height: 80px; 
+    text-align: center; /* 字体水平居中 */
+    line-height: 80px; 
+    font-size: 20px; 
+    letter-spacing: 4px; 
+    background: transparent; 
+    border: 2px solid #3c3c3c; 
+    border-radius: 50%; 
+    box-shadow: 0 0 20 rgba(0, 0, 0, .5); 
+    user-select: none; /* 无法选中 */
+  }
+  .ring::before {
+    content: ''; /* 内容 */
+    position: absolute;
+    z-index: 99;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #b3205d;
+    border-right: 3px solid #771940;
+    border-radius: 50%;
+    animation: animateCircle 2s linear infinite; /* 动画：名称 时间 速率 重复 */
+  }
+  .line{
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left; /* 动画开始位置 */
+    animation: animate 2s linear infinite;
+    transform: rotate(45deg);
+  }
+  .line::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #b3205d;
+    top: -4px;
+    right: -4px;
+    box-shadow: 0 0 20px #b3205d;
+  }
+  @keyframes animate {
+    100% {
+      /* 360+45 */
+      transform: rotate(405deg); 
+    }
+  }
+  @keyframes animateCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* 第二个 */
+  
+  .loading{
+    position: relative;
+  }
+  .loading>view{
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #b3205d;
+  }
+  .loading>view:nth-child(1){
+    top: 20px;
+    left: 0px;
+    animation: loading infinite 1s;
+  }
+  .loading>view:nth-child(2){
+    top: 14.1442px;
+    left: 14.1442px;
+    transform: rotate(-45deg);
+    animation: loading infinite 1s 0.125s;
+  }
+  .loading>view:nth-child(3){
+    top: 0px;
+    left: 20px;
+    transform: rotate(90deg);
+    animation: loading infinite 1s 0.25s;
+  }
+  .loading>view:nth-child(4){
+    top: -14.1442px;
+    left: 14.1442px;
+    transform: rotate(45deg);
+    animation: loading infinite 1s 0.375s;
+  }
+  .loading>view:nth-child(5){
+    top: -20px;
+    left: 0px;
+    transform: rotate(0deg);
+    animation: loading infinite 1s 0.5s;
+  }
+  .loading>view:nth-child(6){
+    top: -14.1442px;
+    left: -14.1442px;
+    transform: rotate(-45deg);
+    animation: loading infinite 1s 0.625s;
+  }
+  .loading>view:nth-child(7){
+    top: 0px;
+    left: -20px;
+    transform: rotate(90deg);
+    animation: loading infinite 1s 0.75s;
+  }
+  .loading>view:nth-child(8){
+    top: 14.1442px;
+    left: -14.1442px;
+    transform: rotate(45deg);
+    animation: loading infinite 1s 0.875s;
+  }
+  
+  @keyframes loading {
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* 第三个 */
+  .circle-line,.circle-line1,.circle-add{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+  }
+  .circle-line text{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: .7;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 40px);
+    background-color: #a8c992;
+    transform-origin: center right; 
+    animation: circle 1.5s linear infinite; 
+  }
+  
+  .circle-line text:nth-child(1){
+    transform: rotate(0deg);
+    animation-delay: 0.2s;
+  }
+  .circle-line text:nth-child(2){
+    transform: rotate(45deg);
+    animation-delay: 0.4s;
+  }
+  .circle-line text:nth-child(3){
+    transform: rotate(90deg);
+    animation-delay: 0.6s;
+  }
+  .circle-line text:nth-child(4){
+    transform: rotate(135deg);
+    animation-delay: 0.8s;
+  }
+  .circle-line text:nth-child(5){
+    transform: rotate(180deg);
+    animation-delay: 1s;
+  }
+  .circle-line text:nth-child(6){
+    transform: rotate(225deg);
+    animation-delay: 1.2s;
+  }
+  .circle-line text:nth-child(7){
+    transform: rotate(270deg);
+    animation-delay: 1.4s;
+  }
+  .circle-line text:nth-child(8){
+    transform: rotate(315deg);
+    animation-delay: 1.6s;
+  }
+  @keyframes circle {
+    0%{
+        opacity: 0.45;
+    }
+    100%{
+        opacity: 0.9;
+    }
+  }
+  /* 第四个 */
+  .circle-line1 text{
+    display: block;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 40px);
+    transform-origin: center right; 
+    animation: circle1 1.5s linear infinite; 
+  
+  }
+  .circle-line1 text::before{
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: #a8c992;
+  }
+  .circle-line1 text:nth-child(1){
+    transform: rotate(0deg);
+    animation-delay: 0.2s;
+  }
+  .circle-line1 text:nth-child(2){
+    transform: rotate(45deg);
+    animation-delay: 0.4s;
+  }
+  .circle-line1 text:nth-child(3){
+    transform: rotate(90deg);
+    animation-delay: 0.6s;
+  }
+  .circle-line1 text:nth-child(4){
+    transform: rotate(135deg);
+    animation-delay: 0.8s;
+  }
+  .circle-line1 text:nth-child(5){
+    transform: rotate(180deg);
+    animation-delay: 1s;
+  }
+  .circle-line1 text:nth-child(6){
+    transform: rotate(225deg);
+    animation-delay: 1.2s;
+  }
+  .circle-line1 text:nth-child(7){
+    transform: rotate(270deg);
+    animation-delay: 1.4s;
+  }
+  .circle-line1 text:nth-child(8){
+    transform: rotate(315deg);
+    animation-delay: 1.6s;
+  }
+  @keyframes circle1 {
+    0%{
+        opacity: 0.15;
+    }
+    100%{
+        opacity: 0.9;
+    }
+  }
+  
+  /* 第五个 */
+  .circle-line-spin{
+    position: relative;
+    animation: circle-line 1.5s linear infinite;  
+  }
+  .circle-line-spin text{
+    display: block;
+    width: 50%;
+    height: 5px;
+    opacity: .7;
+    position: absolute;
+    top: calc(50% - 2.5px);
+    left: 0px;
+    transform-origin: center right;
+  }
+  .circle-line-spin text::before{
+    content: '';
+    display: block;
+    width: 15px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: #a8c992;
+  }
+  .circle-line-spin text:nth-child(1){
+    transform: rotate(0deg);
+    animation-delay: 0.2s;
+  }
+  .circle-line-spin text:nth-child(2){
+    transform: rotate(45deg);
+    animation-delay: 0.4s;
+  }
+  .circle-line-spin text:nth-child(3){
+    transform: rotate(90deg);
+    animation-delay: 0.6s;
+  }
+  .circle-line-spin text:nth-child(4){
+    transform: rotate(135deg);
+    animation-delay: 0.8s;
+  }
+  .circle-line-spin text:nth-child(5){
+    transform: rotate(180deg);
+    animation-delay: 1s;
+  }
+  .circle-line-spin text:nth-child(6){
+    transform: rotate(225deg);
+    animation-delay: 1.2s;
+  }
+  .circle-line-spin text:nth-child(7){
+    transform: rotate(270deg);
+    animation-delay: 1.4s;
+  }
+  .circle-line-spin text:nth-child(8){
+    transform: rotate(315deg);
+    animation-delay: 1.6s;
+  }
+  @keyframes circle-line {
+    0%{
+      transform:rotate(-360deg);
+    }
+    100%{
+      transform:rotate(10deg);
+    }
+  }
+  /* 第六个 */
+  .circle-line2{
+    position: relative;
+  }
+  .circle-line2 text{
+    display: block;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 40px);
+    transform-origin: center right; 
+    animation: circle2 1.5s linear infinite; 
+  }
+  .circle-line2 text::before{
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: #22a2c2;
+  }
+  .circle-line2 text:nth-child(1){
+    transform: rotate(0deg);
+    animation-delay: 0.2s;
+  }
+  .circle-line2 text:nth-child(2){
+    transform: rotate(45deg);
+    animation-delay: 0.4s;
+  }
+  .circle-line2 text:nth-child(3){
+    transform: rotate(90deg);
+    animation-delay: 0.6s;
+  }
+  .circle-line2 text:nth-child(4){
+    transform: rotate(135deg);
+    animation-delay: 0.8s;
+  }
+  .circle-line2 text:nth-child(5){
+    transform: rotate(180deg);
+    animation-delay: 1s;
+  }
+  .circle-line2 text:nth-child(6){
+    transform: rotate(225deg);
+    animation-delay: 1.2s;
+  }
+  .circle-line2 text:nth-child(7){
+    transform: rotate(270deg);
+    animation-delay: 1.4s;
+  }
+  .circle-line2 text:nth-child(8){
+    transform: rotate(315deg);
+    animation-delay: 1.6s;
+  }
+  @keyframes circle2 {
+    0%{
+      opacity: 0.15;
+      transform:rotate(-360deg);
+    }
+    100%{
+      opacity: 0.9;
+      transform:rotate(360deg);
+    }
+  }
+  /* 样式七 */
+  .circle_bx{
+    position: relative;
+  }
+  .circle_bx view{
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    border-top: 48px #22a2c2 solid;
+    border-bottom: 48px #22a2c2 solid;
+    border-left: 48px #22a2c2 solid;
+    border-right: 48px transparent solid;
+    color: #22a2c2;
+    animation: circle_bx  1s linear infinite ;
+  }
+  /* box-shadow: h-shadow v-shadow blur spread color inset; */
+  @keyframes circle_bx {
+    0% {
+      box-shadow: 120px 0px 0 -40px rgba(55, 145, 197, 0.5), 
+      100px 0px 0 -40px rgba(62, 96, 119, 0.75), 
+      80px 0px 0 -40px rgb(24, 149, 221);
+    }
+    100% {
+      box-shadow: 100px 0px 0 -45px rgba(9, 150, 206, 0.5), 
+      80px 0px 0 -45px rgba(84, 100, 117, 0.75), 
+      60px 0px 0 -45px rgb(8, 78, 90);
+    }
+  }
+  .circle_bx view::before {
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    top: -48px;
+    left: -48px;
+    border-top: 48px #22a2c2 solid;
+    border-bottom: 48px transparent solid;
+    border-left: 48px transparent solid;
+    border-right: 48px transparent solid;
+    animation: ccc .5s linear infinite alternate;
+  }
+  @keyframes ccc {
+    0% {
+        transform: rotate(45deg)
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+  }
+  .circle_bx view::after {
+    position: absolute;
+    content: '';
+    top: -48px;
+    left: -48px;
+    border-top: 48px transparent solid;
+    border-bottom: 48px #22a2c2 solid;
+    border-left: 48px transparent solid;
+    border-right: 48px transparent solid;
+    border-radius: 50%;
+    animation: bbb .5s linear infinite alternate;
+  }
+  @keyframes bbb {
+    0% {
+        transform: rotate(-45deg)
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+  } 
+  
+  /* di8个 */
+  .loader-dots view{
+    width: 10px;
+    height: 10px;
+    background: #3ac;
+    border-radius: 50%;
+    display:inline-block;
+    animation: slide 1s infinite;
+  }
+  .loader-dots view:nth-child(1){
+    animation-delay:.1s;
+  }
+  .loader-dots view:nth-child(2){
+    animation-delay:.2s;
+  }
+  .loader-dots view:nth-child(3){
+    animation-delay:.3s;
+  }
+  .loader-dots view:nth-child(4){
+    animation-delay:.4s;
+    background: linear-gradient(#9403b8,#3ac)
+  }
+  .loader-dots view:nth-child(5){
+    animation-delay:.5s;
+    background:radial-gradient(#6d9b93,#3ac)
+  }
+  @keyframes slide{
+    0%{
+      transform: scale(1)
+    }
+    50%
+    {
+      opacity:0.3;
+      transform:scale(2);
+    }
+    100%{
+      transform: scale(1)
+    }
+  }
+  /* 9个 */
+  .loader-rainbow{
+    position: relative;
+    width:100px;
+    height: 100px;
+  }
+  .loader-inner {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+  
+  .loader-line-wrap {
+    animation: 
+    spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+  ;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+  }
+  .loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+  .loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+  .loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+  .loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+  .loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+  .loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+  
+  .loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+  }
+  .loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+  }
+  .loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+  }
+  .loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+  }
+  .loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+  }
+  
+  @keyframes spin {
+    0%, 15% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  }
